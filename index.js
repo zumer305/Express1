@@ -50,11 +50,37 @@ app.get("/orange",(req,res)=>{
     res.send("This is orange page");
 })
 // Put this at the very bottom of your routes
-app.use((req, res) => {
-  res.status(404).send("This page does not exist");
-});
+// app.use((req, res) => {
+//   res.status(404).send("This page does not exist");
+// });
+
+
+
+
 
 // Nodemon for auto start stop server 
 // npm install -g nodemon (for installation)-------------nodemon -v (version)
-// nodemon index.js 
+// nodemon index.js
+
+
+
+// parameters 
+app.get("/:user/:id",(req,res)=>{
+    let {user,id}=req.params;
+
+    res.send(`Welcome to page ${user} ${id}`);
+})
+
+
+// search query 
+app.get("/search",(req,res)=>{
+    let {q}=req.query;
+    if(!q) res.send("q is missing");
+
+    res.send(`Welcome to query : ${q}`);  //localhost:3000/search?q=zumer
+})
+
+
+
+
 
