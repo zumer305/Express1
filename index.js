@@ -35,7 +35,7 @@ app.get("/",(req,res)=>{     //app.use just show localhost:3000
     console.log("req recieved");
 
 //  on localhost:3000 
-    res.send("This is a basic response");  
+    res.send("This is the basic response");  
     // res.send({name:"apple",fruit:"yes"});
     // let code="<h1>Animals<h1>";
     // res.send(code); 
@@ -54,5 +54,7 @@ app.use((req, res) => {
   res.status(404).send("This page does not exist");
 });
 
-
+// Nodemon for auto start stop server 
+// npm install -g nodemon (for installation)-------------nodemon -v (version)
+// nodemon index.js 
 
